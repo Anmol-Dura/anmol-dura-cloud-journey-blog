@@ -4,8 +4,8 @@ url: "https://anmol-dura.github.io" # the base hostname & protocol for your site
 baseurl: "/cloud-blog-Journey-anmol"
 
 author:
-  name: "Anmol Dura"
-  email: "anmoldura8@gmail.com"
+name: "Anmol Dura"
+email: "anmoldura8@gmail.com"
 
 theme: minima
 
