@@ -1,0 +1,34 @@
+title: "Anmol Dura — Journey, Cloud & Life"
+description: "My honest journey: cloud computing, projects, work, gym, and life in Toronto."
+url: "" # set later if using a custom domain
+baseurl: "" # repo name if using project pages (e.g., /myblog)
+
+author:
+  name: "Anmol Dura"
+  email: "anmoldura8@gmail.com"
+
+theme: minima
+
+timezone: America/Toronto
+
+# Nav: which markdown pages show in the top menu
+header_pages:
+  - about.md
+  - projects.md
+  - daily.md
+  - blog.md
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections for daily logs
+collections:
+  daily:
+    output: true
+    permalink: /daily/:title/
+
+# Markdown & permalinks
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
