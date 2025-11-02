@@ -14,12 +14,8 @@ Imagine, you have a bunch of computer in a network, and what is a network?: a gr
 
 This can create chaos and problem in the network, therefore we need to allocate ips for network portion so that we can have manageable network chunks and does not crash the network.
 
-<style>
-  div { font-family: Arial, sans-serif; background: #0b0c10; color: #e8e8e8; text-align:center; padding:2rem; }
-  svg { background: #111317; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4); margin: 2rem auto; display:block; max-width: 800px; }
-  h2 { color: #7c5cff; }
-</style>
-<div class="black-out">
+
+<div class="black-out" style="margin:0; padding:2rem; font-family:Arial, sans-serif; background:#0b0c10; color:#e8e8e8; text-align:center;" >
 <h2>🧩 Simple Personal Company Network</h2>
 
   <svg width="700" height="400">
@@ -33,7 +29,7 @@ This can create chaos and problem in the network, therefore we need to allocate 
 
   <!-- Switch -->
   <rect x="300" y="200" width="100" height="40" rx="6" ry="6" fill="#222" stroke="#00c896" stroke-width="2"/>
-  <text x="325" y="225" fill="#fff">Switch</text>
+  <text x="325" y="255" fill="#fff">Switch</text>
 
   <!-- Devices -->
   <rect x="150" y="280" width="80" height="40" rx="6" ry="6" fill="#222" stroke="#fff" stroke-width="1.5"/>
@@ -102,3 +98,12 @@ This can create chaos and problem in the network, therefore we need to allocate 
   <line x1="450" y1="230" x2="450" y2="460" stroke="#ffb84d" stroke-width="2"/>
 </svg>
 </div>
+
+**SO HOW TO DO SUBNETTING:?**
+Let's take an example where we have a **IP:255.255.255.0/24** now here we can see that the first three portion is the network portion and the last part is the host portion meaning the lowest **IP:255.255.255.0 ~ 11111111.11111111.11111111.00000000** is the network address and the highest **IP:255.255.255.255 ~ 11111111.11111111.11111111.11111111** is the bandwidth address and everything in between those ip will be the host address meaning in total we have **254 host addresses** . Now, if we wanted to change this single chunk of address into various network which is called **SUBNETTING: cuting a single chunk of network into various different networks**.
+
+<h1>Changing one ip into chunk of network: with bit borrowing(each bit borrowed doubles the number of network ids)</h1>
+we borrow one bit from the original network ip and then the network divides it's self into half of what it was before.
+
+**255.255.255.0 ~ 11111111.11111111.11111111.00000000 ==> 255.255.255.128 ~ 11111111.11111111.11111111.10000000** : in total 2 network ids because, in the 4th octate the number can be 00 and 10 <br>
+**255.255.255.128 ~ 11111111.11111111.11111111.10000000 ==> 255.255.255.198 ~ 11111111.11111111.11111111.11000000** : in total 4 network ids because, in the 4th octate the number can be 00 and 10 <br>
