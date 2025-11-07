@@ -100,3 +100,49 @@ When we **borrow bits** from the host portion, we create **more networks** but *
 ---
 
 ### Example 1 – Borrowing 1 Bit
+
+11111111.11111111.11111111.00000000 → 11111111.11111111.11111111.10000000
+
+- Decimal mask: `255.255.255.128`
+- Number of subnets: `2`
+- Subnet ranges:
+  - `192.168.1.0/25 → 192.168.1.0–127`
+  - `192.168.1.128/25 → 192.168.1.128–255`
+
+---
+
+### Example 2 – Borrowing 2 Bits
+
+11111111.11111111.11111111.00000000 → 11111111.11111111.11111111.11000000
+
+- Decimal mask: `255.255.255.192`
+- Number of subnets: `4`
+- Subnet ranges:
+  - `192.168.1.0/26` → 0–63
+  - `192.168.1.64/26` → 64–127
+  - `192.168.1.128/26` → 128–191
+  - `192.168.1.192/26` → 192–255
+
+---
+
+### 🧠 Quick Tip
+
+Each **borrowed bit doubles the number of possible subnets**, because binary bits have two states — `0` and `1`.
+2¹ = 2 subnets
+2² = 4 subnets
+2³ = 8 subnets
+
+So subnetting is like slicing a pizza — every time you make another cut (borrow a bit), you double the number of slices (subnets).
+
+---
+
+## ☁️ Subnetting in AWS
+
+In AWS VPCs, this logic works exactly the same.  
+A **VPC CIDR block** (like `10.0.0.0/16`) can be divided into multiple **subnets** (like `/24` or `/26`) to separate:
+
+- **Public** vs **Private** networks
+- **App layer** vs **Database layer**
+- **Availability zones** for high availability
+
+Subnetting is the foundation of AWS networking — understanding this concept helps you control **IP address allocation**, **security**, and **traffic flow** inside your cloud infrastructure.
